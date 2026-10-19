@@ -1,0 +1,752 @@
+{
+  "version": 1,
+  "author": "hbickin",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-ssd1306",
+      "id": "oled",
+      "top": -140,
+      "left": 140,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_low",
+      "top": -260,
+      "left": 40,
+      "attrs": {
+        "color": "white",
+        "label": "Kisa far"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r_low",
+      "top": -180,
+      "left": 20,
+      "attrs": {
+        "value": "220"
+      },
+      "rotate": 90
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_high",
+      "top": -260,
+      "left": 110,
+      "attrs": {
+        "color": "white",
+        "label": "Uzun far"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r_high",
+      "top": -180,
+      "left": 90,
+      "attrs": {
+        "value": "220"
+      },
+      "rotate": 90
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_fl",
+      "top": -260,
+      "left": -60,
+      "attrs": {
+        "color": "orange",
+        "label": "Sol on sinyal"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r_fl",
+      "top": -180,
+      "left": -80,
+      "attrs": {
+        "value": "220"
+      },
+      "rotate": 90
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_fr",
+      "top": -260,
+      "left": 180,
+      "attrs": {
+        "color": "orange",
+        "label": "Sag on sinyal"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r_fr",
+      "top": -180,
+      "left": 160,
+      "attrs": {
+        "value": "220"
+      },
+      "rotate": 90
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_tail",
+      "top": 330,
+      "left": 60,
+      "attrs": {
+        "color": "red",
+        "label": "Arka lamba / Stop"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r_tail",
+      "top": 410,
+      "left": 40,
+      "attrs": {
+        "value": "220"
+      },
+      "rotate": 90
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_rl",
+      "top": 330,
+      "left": -40,
+      "attrs": {
+        "color": "orange",
+        "label": "Sol arka sinyal"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r_rl",
+      "top": 410,
+      "left": -60,
+      "attrs": {
+        "value": "220"
+      },
+      "rotate": 90
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_rr",
+      "top": 330,
+      "left": 160,
+      "attrs": {
+        "color": "orange",
+        "label": "Sag arka sinyal"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r_rr",
+      "top": 410,
+      "left": 140,
+      "attrs": {
+        "value": "220"
+      },
+      "rotate": 90
+    },
+    {
+      "type": "wokwi-relay-module",
+      "id": "relay",
+      "top": 150,
+      "left": 200,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_starter",
+      "top": 130,
+      "left": 330,
+      "attrs": {
+        "color": "yellow",
+        "label": "Mars motoru"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r_starter",
+      "top": 210,
+      "left": 310,
+      "attrs": {
+        "value": "220"
+      },
+      "rotate": 90
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "horn",
+      "top": 60,
+      "left": 260,
+      "attrs": {
+        "volume": "0.3"
+      }
+    },
+    {
+      "type": "wokwi-slide-switch",
+      "id": "sw_key",
+      "top": -40,
+      "left": -260,
+      "attrs": {
+        "label": "Kontak"
+      }
+    },
+    {
+      "type": "wokwi-slide-switch",
+      "id": "sw_kill",
+      "top": 20,
+      "left": -260,
+      "attrs": {
+        "label": "Kill (RUN/STOP)"
+      }
+    },
+    {
+      "type": "wokwi-slide-switch",
+      "id": "sw_highsw",
+      "top": 80,
+      "left": -260,
+      "attrs": {
+        "label": "Uzun far anahtari"
+      }
+    },
+    {
+      "type": "wokwi-slide-switch",
+      "id": "sw_neutral",
+      "top": 140,
+      "left": -260,
+      "attrs": {
+        "label": "Bos vites"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn_start",
+      "top": -100,
+      "left": -420,
+      "attrs": {
+        "color": "green",
+        "label": "Mars"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn_horn",
+      "top": -40,
+      "left": -420,
+      "attrs": {
+        "color": "yellow",
+        "label": "Korna"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn_left",
+      "top": 20,
+      "left": -420,
+      "attrs": {
+        "color": "blue",
+        "label": "Sol sinyal"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn_right",
+      "top": 80,
+      "left": -420,
+      "attrs": {
+        "color": "blue",
+        "label": "Sag sinyal"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn_hazard",
+      "top": 140,
+      "left": -420,
+      "attrs": {
+        "color": "red",
+        "label": "Dortlu flasor"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn_brake",
+      "top": 200,
+      "left": -420,
+      "attrs": {
+        "color": "red",
+        "label": "Fren"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r_pu_brake",
+      "top": 260,
+      "left": -150,
+      "attrs": {
+        "value": "10000"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r_pu_neutral",
+      "top": 200,
+      "left": -150,
+      "attrs": {
+        "value": "10000"
+      }
+    },
+    {
+      "type": "wokwi-slide-potentiometer",
+      "id": "pot_throttle",
+      "top": -200,
+      "left": -460,
+      "attrs": {
+        "travelLength": "30",
+        "label": "Gaz kolu"
+      }
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "pot_fuel",
+      "top": 280,
+      "left": -380,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "pot_temp",
+      "top": 280,
+      "left": -300,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [
+      "oled:DATA",
+      "esp:D21",
+      "blue",
+      []
+    ],
+    [
+      "oled:CLK",
+      "esp:D22",
+      "purple",
+      []
+    ],
+    [
+      "oled:VCC",
+      "esp:3V3",
+      "red",
+      []
+    ],
+    [
+      "oled:GND",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+    [
+      "esp:D18",
+      "r_low:1",
+      "green",
+      []
+    ],
+    [
+      "r_low:2",
+      "led_low:A",
+      "green",
+      []
+    ],
+    [
+      "led_low:C",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+    [
+      "esp:D19",
+      "r_high:1",
+      "green",
+      []
+    ],
+    [
+      "r_high:2",
+      "led_high:A",
+      "green",
+      []
+    ],
+    [
+      "led_high:C",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+    [
+      "esp:D4",
+      "r_fl:1",
+      "orange",
+      []
+    ],
+    [
+      "r_fl:2",
+      "led_fl:A",
+      "green",
+      []
+    ],
+    [
+      "led_fl:C",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+    [
+      "esp:D5",
+      "r_fr:1",
+      "orange",
+      []
+    ],
+    [
+      "r_fr:2",
+      "led_fr:A",
+      "green",
+      []
+    ],
+    [
+      "led_fr:C",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+    [
+      "esp:D23",
+      "r_tail:1",
+      "green",
+      []
+    ],
+    [
+      "r_tail:2",
+      "led_tail:A",
+      "green",
+      []
+    ],
+    [
+      "led_tail:C",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+    [
+      "esp:D4",
+      "r_rl:1",
+      "orange",
+      []
+    ],
+    [
+      "r_rl:2",
+      "led_rl:A",
+      "green",
+      []
+    ],
+    [
+      "led_rl:C",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+    [
+      "esp:D5",
+      "r_rr:1",
+      "orange",
+      []
+    ],
+    [
+      "r_rr:2",
+      "led_rr:A",
+      "green",
+      []
+    ],
+    [
+      "led_rr:C",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+    [
+      "relay:VCC",
+      "esp:VIN",
+      "red",
+      []
+    ],
+    [
+      "relay:GND",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+    [
+      "relay:IN",
+      "esp:D2",
+      "violet",
+      []
+    ],
+    [
+      "relay:COM",
+      "esp:3V3",
+      "red",
+      []
+    ],
+    [
+      "relay:NO",
+      "r_starter:1",
+      "green",
+      []
+    ],
+    [
+      "r_starter:2",
+      "led_starter:A",
+      "green",
+      []
+    ],
+    [
+      "led_starter:C",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+    [
+      "horn:2",
+      "esp:D15",
+      "yellow",
+      []
+    ],
+    [
+      "horn:1",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+    [
+      "sw_key:2",
+      "esp:D13",
+      "green",
+      []
+    ],
+    [
+      "sw_key:1",
+      "esp:GND.2",
+      "black",
+      []
+    ],
+    [
+      "sw_kill:2",
+      "esp:D14",
+      "green",
+      []
+    ],
+    [
+      "sw_kill:1",
+      "esp:GND.2",
+      "black",
+      []
+    ],
+    [
+      "sw_highsw:2",
+      "esp:TX2",
+      "green",
+      []
+    ],
+    [
+      "sw_highsw:1",
+      "esp:GND.2",
+      "black",
+      []
+    ],
+    [
+      "sw_neutral:2",
+      "esp:VN",
+      "green",
+      []
+    ],
+    [
+      "sw_neutral:1",
+      "esp:GND.2",
+      "black",
+      []
+    ],
+    [
+      "btn_start:1.r",
+      "esp:D27",
+      "green",
+      []
+    ],
+    [
+      "btn_start:2.r",
+      "esp:GND.2",
+      "black",
+      []
+    ],
+    [
+      "btn_horn:1.r",
+      "esp:D26",
+      "green",
+      []
+    ],
+    [
+      "btn_horn:2.r",
+      "esp:GND.2",
+      "black",
+      []
+    ],
+    [
+      "btn_left:1.r",
+      "esp:D25",
+      "green",
+      []
+    ],
+    [
+      "btn_left:2.r",
+      "esp:GND.2",
+      "black",
+      []
+    ],
+    [
+      "btn_right:1.r",
+      "esp:D33",
+      "green",
+      []
+    ],
+    [
+      "btn_right:2.r",
+      "esp:GND.2",
+      "black",
+      []
+    ],
+    [
+      "btn_hazard:1.r",
+      "esp:RX2",
+      "green",
+      []
+    ],
+    [
+      "btn_hazard:2.r",
+      "esp:GND.2",
+      "black",
+      []
+    ],
+    [
+      "btn_brake:1.r",
+      "esp:VP",
+      "green",
+      []
+    ],
+    [
+      "btn_brake:2.r",
+      "esp:GND.2",
+      "black",
+      []
+    ],
+    [
+      "r_pu_brake:1",
+      "esp:VP",
+      "green",
+      []
+    ],
+    [
+      "r_pu_brake:2",
+      "esp:3V3",
+      "red",
+      []
+    ],
+    [
+      "r_pu_neutral:1",
+      "esp:VN",
+      "green",
+      []
+    ],
+    [
+      "r_pu_neutral:2",
+      "esp:3V3",
+      "red",
+      []
+    ],
+    [
+      "pot_throttle:VCC",
+      "esp:3V3",
+      "red",
+      []
+    ],
+    [
+      "pot_throttle:GND",
+      "esp:GND.2",
+      "black",
+      []
+    ],
+    [
+      "pot_throttle:SIG",
+      "esp:D34",
+      "green",
+      []
+    ],
+    [
+      "pot_fuel:VCC",
+      "esp:3V3",
+      "red",
+      []
+    ],
+    [
+      "pot_fuel:GND",
+      "esp:GND.2",
+      "black",
+      []
+    ],
+    [
+      "pot_fuel:SIG",
+      "esp:D35",
+      "green",
+      []
+    ],
+    [
+      "pot_temp:VCC",
+      "esp:3V3",
+      "red",
+      []
+    ],
+    [
+      "pot_temp:GND",
+      "esp:GND.2",
+      "black",
+      []
+    ],
+    [
+      "pot_temp:SIG",
+      "esp:D32",
+      "green",
+      []
+    ],
+    [
+      "esp:TX0",
+      "$serialMonitor:RX",
+      "",
+      []
+    ],
+    [
+      "esp:RX0",
+      "$serialMonitor:TX",
+      "",
+      []
+    ]
+  ],
+  "dependencies": {}
+}

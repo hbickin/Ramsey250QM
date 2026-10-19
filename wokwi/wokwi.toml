@@ -1,0 +1,5 @@
+# Wokwi for VS Code (PlatformIO / arduino-cli ile derledikten sonra)
+[wokwi]
+version = 1
+firmware = 'build/sketch.ino.bin'
+elf = 'build/sketch.ino.elf'

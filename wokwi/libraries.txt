@@ -1,0 +1,3 @@
+# Wokwi kütüphane listesi
+Adafruit GFX Library
+Adafruit SSD1306
